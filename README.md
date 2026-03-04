@@ -170,3 +170,174 @@
 14\. Что происходит с корзиной при авторизации: объединяем с уже сохранённой корзиной пользователя или заменяем?
 
 15\. Есть ли различия в логике корзины для разных регионов, валют, типов пользователей (B2B, B2C)?
+
+**Задание 2: проектирование API**
+
+**Описание:**
+
+Интернет-магазин "Петрушка Зеленая" преуспевает, расширяется и в мобильном приложении решили создать новый экран, который будет отображать магазины партнеров
+
+{
+
+&nbsp; "status": "success",
+
+&nbsp; "data": {
+
+&nbsp;   "title": "Выберите магазин",
+
+&nbsp;   "stores": \[
+
+&nbsp;     {
+
+&nbsp;       "id": "metro_001",
+
+&nbsp;       "name": "METRO",
+
+&nbsp;       "logo_url": "<https://cdn.petrushka-zelenaya.ru/partners/logos/metro.png>",
+
+&nbsp;       "delivery_info": {
+
+&nbsp;         "type": "scheduled",
+
+&nbsp;         "label": "Ближайшая доставка",
+
+&nbsp;         "value": "сегодня 21:00-23:00",
+
+&nbsp;         "is_highlighted": false,
+
+&nbsp;         "timeSlots": \[
+
+&nbsp;           {
+
+&nbsp;             "start": "2026-02-28T21:00:00",
+
+&nbsp;             "end": "2026-02-28T23:00:00"
+
+&nbsp;           }
+
+&nbsp;         \]
+
+&nbsp;       },
+
+&nbsp;       "external_url": "<https://metro-cc.ru/shop/>..."
+
+&nbsp;     },
+
+&nbsp;     {
+
+&nbsp;       "id": "auchan_002",
+
+&nbsp;       "name": "Ашан",
+
+&nbsp;       "background_color": "#FFFFFF",
+
+&nbsp;       "logo_url": "<https://cdn.petrushka-zelenaya.ru/partners/logos/auchan.png>",
+
+&nbsp;       "delivery_info": {
+
+&nbsp;         "type": "scheduled",
+
+&nbsp;         "label": "Ближайшая доставка",
+
+&nbsp;         "value": "сегодня 18:00-20:00",
+
+&nbsp;         "is_highlighted": false,
+
+&nbsp;         "timeSlots": \[
+
+&nbsp;           {
+
+&nbsp;             "start": "2026-02-28T18:00:00",
+
+&nbsp;             "end": "2026-02-28T20:00:00"
+
+&nbsp;           }
+
+&nbsp;         \]
+
+&nbsp;       },
+
+&nbsp;       "external_url": "<https://auchan.ru/catalog/>..."
+
+&nbsp;     },
+
+&nbsp;     {
+
+&nbsp;       "id": "vkusvill_003",
+
+&nbsp;       "name": "ВкусВилл",
+
+&nbsp;       "background_color": "#FFFFFF",
+
+&nbsp;       "logo_url": "<https://cdn.petrushka-zelenaya.ru/partners/logos/vkusvill.png>",
+
+&nbsp;       "delivery_info": {
+
+&nbsp;         "type": "express",
+
+&nbsp;         "label": "Быстрая доставка",
+
+&nbsp;         "value": "от 20 до 60 минут",
+
+&nbsp;         "is_highlighted": true,
+
+&nbsp;         "timeSlots": \[\]
+
+&nbsp;       },
+
+&nbsp;       "external_url": "<https://vkusvill.ru/>..."
+
+&nbsp;     },
+
+&nbsp;     {
+
+&nbsp;       "id": "victoria_004",
+
+&nbsp;       "name": "ВИКТОРИЯ",
+
+&nbsp;       "background_color": "#FFFFFF",
+
+&nbsp;       "logo_url": "<https://cdn.petrushka-zelenaya.ru/partners/logos/victoria.png>",
+
+&nbsp;       "delivery_info": {
+
+&nbsp;         "type": "scheduled",
+
+&nbsp;         "label": "Ближайшая доставка",
+
+&nbsp;         "value": "сегодня 17:00-19:00",
+
+&nbsp;         "is_highlighted": false,
+
+&nbsp;         "timeSlots": \[
+
+&nbsp;           {
+
+&nbsp;             "start": "2026-02-28T17:00:00",
+
+&nbsp;             "end": "2026-02-28T19:00:00"
+
+&nbsp;           }
+
+&nbsp;         \]
+
+&nbsp;       },
+
+&nbsp;       "external_url": "<https://victoria-group.ru/>..."
+
+&nbsp;     }
+
+&nbsp;   \]
+
+&nbsp; }
+
+}
+
+**Задание 3: архитектура**
+
+**Описание:**
+
+Заказчик хочет, что в мобильное приложение интернет-магазина "Петрушка Зеленая" начали приходить пуши. Они могут быть разными: о том, что заказ слишком долго лежит без действий в корзине, об отмене заказа, рекламные рассылки и прочее. То есть нужен функционал, а какие пуши отправлять - точно найдется.
+<img width="2005" height="1651" alt="Screenshot 2026-03-05 010817" src="https://github.com/user-attachments/assets/2848a7f0-618a-471f-835d-3c27ef18e28c" />
+<img width="8192" height="3578" alt="Mobile App Notification-2026-03-03-143515" src="https://github.com/user-attachments/assets/4d0a95bf-3b69-4792-b52c-318716c8c6be" />
+
