@@ -1,4 +1,4 @@
-[Untitled.yaml](https://github.com/user-attachments/files/25766348/Untitled.yaml)**Задание 1: Анализ требований**
+**Задание 1: Анализ требований**
 
 **Описание:**
 
@@ -176,7 +176,10 @@
 **Описание:**
 
 Интернет-магазин "Петрушка Зеленая" преуспевает, расширяется и в мобильном приложении решили создать новый экран, который будет отображать магазины партнеров
-[Up{
+
+
+[Untitled.json](https://github.com/user-attachments/files/25766406/Untitled.json)
+{
   "status": "success",
   "data": {
     "title": "Выберите магазин",
@@ -254,8 +257,6 @@
     ]
   }
 }
-loading Untitled.yaml…]()
-
 
 
 
